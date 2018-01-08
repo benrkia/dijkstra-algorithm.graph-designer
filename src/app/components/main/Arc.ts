@@ -1,11 +1,10 @@
-import {Sommet} from './Sommet'
-
 /**
  *
  * @author Benrkia ilyasse
+ * url: fb.com/benilya
  * @author El Adssaoui Achraf
- * Filiere GLSID 1; 2017
  */
+ import {Sommet} from './Sommet'
 
 export class Arc {
 

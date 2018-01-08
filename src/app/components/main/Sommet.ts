@@ -1,8 +1,8 @@
 /**
  *
  * @author Benrkia ilyasse
+ * url: fb.com/benilya
  * @author El Adssaoui Achraf
- * Filiere GLSID 1; 2017
  */
 
  export class Sommet {

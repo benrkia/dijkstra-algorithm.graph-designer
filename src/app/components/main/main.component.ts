@@ -1,8 +1,8 @@
 /**
  *
  * @author Benrkia ilyasse
+ * url: fb.com/benilya
  * @author El Adssaoui Achraf
- * Filiere GLSID 1; 2017
  */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Arc } from './Arc';
@@ -53,7 +53,7 @@ export class MainComponent implements OnInit {
 			}
 		}
 		
-		this._Msg='vous devez entrez au moins 3 noeuds, au moins deux char pour chaque noeud';
+		this._Msg='You must enter at least 3 vertices, at least two characters for each vertices';
 	}
 
 	dummy : Sommet;
@@ -117,7 +117,7 @@ export class MainComponent implements OnInit {
     	}
 
     	let _sommet:Sommet = s;
-        let arr:string = "Le plus court chemin est : ";   
+        let arr:string = "The shortest path is:";   
 
         let i=0;
 		let chemin:Array<string> = new Array<string>();
@@ -127,7 +127,7 @@ export class MainComponent implements OnInit {
     	}
 
     	if(typeof _sommet=='undefined'){
-    		this._Msg = "pas de chemin a cette noeud";
+    		this._Msg = "no path to this summit";
     		this.isError = true;
     		this.isSuccess = false;
     	}else{

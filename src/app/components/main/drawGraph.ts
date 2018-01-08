@@ -1,3 +1,9 @@
+/**
+ *
+ * @author Benrkia ilyasse
+ * url: fb.com/benilya
+ * @author El Adssaoui Achraf
+ */
 export class drawGraph{
 
   constructor(_myLinks){
@@ -77,27 +83,6 @@ export class drawGraph{
         .attr("x", -10)
         .attr("y", 3.5)
         .text(function(d) { return d.name; });
-
-    /*
-
-    var path = svg.append("g").selectAll("path")
-        .data(force.links())
-        .enter().append("path")
-        .attr("class", function(d) { return "link " + d.type; })
-        .attr("marker-end", function(d) { return "url(#" + d.type + ")"; });
-
-    var circle = svg.append("g").selectAll("circle")
-        .data(force.nodes())
-        .enter().append("circle")
-        .attr("r", 20)
-        .call(force.drag);
-
-    var text = svg.append("g").selectAll("text")
-        .data(force.nodes())
-        .enter().append("text")
-        .attr("x", 8)
-        .attr("y", ".31em")
-        .text(function(d) { return d.name; });*/
 
     // Use elliptical arc path segments to doubly-encode directionality.
     function tick() {
