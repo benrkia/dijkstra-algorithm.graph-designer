@@ -1,0 +1,43 @@
+<div *ngIf="_firstStep" class="firstStep">
+	<div class="groupe">
+		<label>Noeuds: </label>
+		<textarea placeholder="entrez les noeuds séparer par virgule" #Noeuds></textarea>
+		<button (click)="firstStep(Noeuds.value)">creer les arcs</button>
+	</div>
+	<div *ngIf="isError" class="alert alert-danger">{{_Msg}}</div>
+</div>
+
+<div *ngIf="_secondStep" class="secondStep">
+	<label>choisir noeud source: </label>
+	<select #source>
+		<option *ngFor="let Noeud of Noeuds;index as i" value="{{i}}">{{Noeud}}</option>
+	</select>,
+	<input min="2" type="number" placeholder="Entrez nombres des arcs" (keyup)="arcCount=count.value;" #count>
+	<div class="myarcs">
+		<div #Arcs>
+			<div *ngFor="let item of getArcCount()">
+				<select>
+					<option *ngFor="let Noeud of Noeuds;index as i" value="{{i}}">{{Noeud}}</option>
+				</select>
+				<span></span>
+				<input type="number" value="0" min="0">
+				<span class="marker"></span>
+				<select>
+					<option *ngFor="let Noeud of Noeuds;index as i" value="{{i}}">{{Noeud}}</option>
+				</select>
+			</div>
+		</div>
+		<button (click)="secondStep(source.value)">plus court chemain</button>
+	</div>
+</div>
+
+<div *ngIf="_thirdStep" class="thirdStep">
+	<select #mySelect>
+		<option *ngFor="let Noeud of Noeuds;index as i" value="{{i}}">{{Noeud}}</option>
+	</select>
+	<button (click)="trouverChemain(mySelect.value)">trouver plus cours chemin</button>
+	<div *ngIf="_thirdStep && isError" class="alert alert-danger">{{_Msg}}</div>
+	<div *ngIf="_thirdStep && isSuccess" class="alert alert-success"><p style="margin:0;"><strong>Distance: </strong>{{_dist}}</p>{{_Msg}}</div>
+</div>
+
+<div id="myGraph"></div>
